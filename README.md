@@ -17,6 +17,7 @@ A C++ client for making inference calls to the Cerebras API endpoint with suppor
 1. **Boost libraries** (version 1.70+)
 2. **nlohmann/json** (JSON library)
 3. **OpenSSL** (for SSL/TLS support)
+4. **liboai** (OpenAI API library - included as submodule)
 
 ### Installation
 
@@ -29,6 +30,14 @@ brew install boost nlohmann-json openssl
 ```bash
 sudo apt-get update
 sudo apt-get install libboost-all-dev nlohmann-json3-dev libssl-dev
+```
+
+### Submodule Initialization
+
+If cloning this repository, initialize the liboai submodule:
+
+```bash
+git submodule update --init --recursive
 ```
 
 ## Building

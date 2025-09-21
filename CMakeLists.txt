@@ -8,6 +8,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Set policy to suppress Boost deprecation warning
 cmake_policy(SET CMP0167 NEW)
 
+# Add liboai submodule
+add_subdirectory(extern/liboai)
+
 # Find required packages
 find_package(Boost REQUIRED)
 find_package(nlohmann_json REQUIRED)
@@ -30,6 +33,7 @@ target_link_libraries(rest_client PRIVATE
     nlohmann_json::nlohmann_json
     OpenSSL::SSL
     OpenSSL::Crypto
+    oai  # liboai library
 )
 
 # Compiler-specific options

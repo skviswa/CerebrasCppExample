@@ -1,0 +1,3 @@
+[submodule "extern/liboai"]
+	path = extern/liboai
+	url = https://github.com/D7EAD/liboai
