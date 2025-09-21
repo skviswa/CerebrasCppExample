@@ -1,4 +1,4 @@
-# Cerebras Throughput Test Client
+# Cerebras Benchmark Client
 
 A C++ client for testing throughput performance when making inference calls to the Cerebras API endpoint. This tool supports concurrent requests and detailed performance statistics collection.
 
@@ -51,22 +51,22 @@ cd build
 cmake ..
 make
 
-# The binary will be created at: build/bin/throughput_test
+# The binary will be created at: build/bin/benchmark
 ```
 
 ## Usage
 
-### Throughput Test Usage
+### Benchmark Usage
 
 ```bash
-./bin/throughput_test \
+./bin/benchmark \
   --api_key="your-cerebras-api-key" \
   --input_file="requests.jsonl" \
   --concurrent_requests=5 \
   --output_file="results.json"
 ```
 
-### Throughput Test Parameters
+### Benchmark Parameters
 
 - `--api_key`: (Required) Your Cerebras API key
 - `--api_endpoint`: (Optional) API endpoint URL, defaults to "https://api.cerebras.ai/v1"
@@ -96,8 +96,8 @@ Each JSON object can contain:
 ### Basic Throughput Test
 
 ```bash
-# Run throughput test with sample requests
-./bin/throughput_test \
+# Run benchmark with sample requests
+./bin/benchmark \
   --api_key=YOUR_API_KEY \
   --input_file=datasets/sample_requests.jsonl \
   --concurrent_requests=5 \
@@ -108,7 +108,7 @@ Each JSON object can contain:
 
 ```bash
 # Run with custom endpoint and model
-./bin/throughput_test \
+./bin/benchmark \
   --api_key=YOUR_API_KEY \
   --api_endpoint="https://api.cerebras.ai/v1" \
   --model="llama-3.3-70b" \
@@ -166,7 +166,7 @@ Each JSON object can contain:
 
 ## Expected Output
 
-The throughput test generates detailed performance statistics including:
+The benchmark generates detailed performance statistics including:
 - Overall test duration and requests per second
 - Token usage statistics (prompt, completion, and total tokens)
 - Individual request timing (total duration, time to first token)
