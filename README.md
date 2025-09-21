@@ -1,6 +1,6 @@
-# Cerebras REST Client
+# Cerebras Throughput Test Client
 
-A C++ client for making inference calls to the Cerebras API endpoint with support for both streaming and non-streaming modes, plus throughput testing capabilities.
+A C++ client for testing throughput performance when making inference calls to the Cerebras API endpoint. This tool supports concurrent requests and detailed performance statistics collection.
 
 ## Features
 
@@ -21,13 +21,13 @@ A C++ client for making inference calls to the Cerebras API endpoint with suppor
 
 #### macOS (using Homebrew)
 ```bash
-brew install boost nlohmann-json openssl
+brew install boost
 ```
 
 #### Ubuntu/Debian
 ```bash
 sudo apt-get update
-sudo apt-get install libboost-all-dev nlohmann-json3-dev libssl-dev
+sudo apt-get install libboost-all-dev
 ```
 
 ### Submodule Initialization
@@ -40,7 +40,7 @@ git submodule update --init --recursive
 
 ## Building
 
-### Method 1: Using CMake (Recommended)
+### Using CMake (Recommended)
 
 ```bash
 # Create build directory
@@ -51,38 +51,10 @@ cd build
 cmake ..
 make
 
-# The binaries will be created at: build/bin/rest_client and build/bin/throughput_test
+# The binary will be created at: build/bin/throughput_test
 ```
-
-**Note**: The direct compilation method is not recommended due to the complexity of the liboai library dependencies. Please use CMake for reliable builds.
 
 ## Usage
-
-### REST Client Basic Usage
-
-```bash
-./bin/rest_client --api_key=YOUR_API_KEY --prompt="Hello, world!"
-```
-
-### All Parameters
-
-```bash
-./bin/rest_client \
-  --api_key="your-cerebras-api-key" \
-  --model="llama-3.3-70b" \
-  --prompt="What is artificial intelligence?" \
-  --max_tokens=100 \
-  --stream
-```
-
-### Parameter Descriptions
-
-- `--api_key`: (Required) Your Cerebras API key
-- `--model`: (Optional) Model name, defaults to "llama-3.3-70b"
-- `--prompt`: (Optional) Input prompt, defaults to "Hello, world!"
-- `--max_tokens`: (Optional) Maximum tokens to generate, defaults to 100
-- `--stream`: (Optional) Enable streaming mode for real-time response
-- `--help`, `-h`: Show help message
 
 ### Throughput Test Usage
 
@@ -98,6 +70,7 @@ make
 
 - `--api_key`: (Required) Your Cerebras API key
 - `--api_endpoint`: (Optional) API endpoint URL, defaults to "https://api.cerebras.ai/v1"
+- `--model`: (Optional) Model name to use, defaults to "llama-3.3-70b"
 - `--input_file`: (Required) Path to JSONL file containing completion requests
 - `--concurrent_requests`: (Optional) Number of concurrent threads, defaults to 10
 - `--output_file`: (Optional) Path to output JSON stats file, defaults to "throughput_stats.json"
@@ -108,82 +81,97 @@ make
 The input file should contain one JSON object per line with the following structure:
 
 ```json
-{"prompt": "Your prompt here", "max_tokens": 100, "temperature": 0.7, "model": "llama-3.3-70b"}
-{"prompt": "Another prompt", "max_tokens": 150, "temperature": 0.5, "model": "llama-3.3-70b"}
+{"prompt": "Your prompt here", "max_tokens": 100, "temperature": 0.7}
+{"prompt": "Another prompt", "max_tokens": 150, "temperature": 0.5}
 ```
 
 Each JSON object can contain:
 - `prompt`: (Required) The input prompt string
 - `max_tokens`: (Optional) Maximum tokens to generate
 - `temperature`: (Optional) Sampling temperature for the model
-- `model`: (Optional) Model name to use, defaults to "llama-3.3-70b"
+- `stream`: (Optional) Enable streaming mode for real-time response (defaults to true)
 
 ## Examples
 
-### Non-Streaming Mode (Default)
+### Basic Throughput Test
 
 ```bash
-# Basic usage
-./bin/rest_client --api_key=YOUR_API_KEY --prompt="What is AI?"
-
-# With custom parameters
-./bin/rest_client \
+# Run throughput test with sample requests
+./bin/throughput_test \
   --api_key=YOUR_API_KEY \
-  --model="llama-3.3-70b" \
-  --prompt="Explain quantum computing" \
-  --max_tokens=200
+  --input_file=datasets/sample_requests.jsonl \
+  --concurrent_requests=5 \
+  --output_file=results.json
 ```
 
-**Output:**
-```
-[INFO] Response: {"id":"chatcmpl-123","object":"chat.completion","created":1234567890,"model":"llama-3.3-70b","choices":[{"index":0,"message":{"role":"assistant","content":"Quantum computing is a type of computation..."},"finish_reason":"stop"}],"usage":{"prompt_tokens":5,"completion_tokens":50,"total_tokens":55}}
-[INFO] Coroutine finished successfully.
-[INFO] Done!
-```
-
-### Streaming Mode
+### Custom Parameters
 
 ```bash
-# Enable streaming
-./bin/rest_client --api_key=YOUR_API_KEY --prompt="What is AI?" --stream
-
-# With custom parameters
-./bin/rest_client \
+# Run with custom endpoint and model
+./bin/throughput_test \
   --api_key=YOUR_API_KEY \
+  --api_endpoint="https://api.cerebras.ai/v1" \
   --model="llama-3.3-70b" \
-  --prompt="Explain machine learning" \
-  --max_tokens=150 \
-  --stream
+  --input_file="my_requests.jsonl" \
+  --concurrent_requests=20 \
+  --output_file="performance_results.json"
 ```
 
-**Output:**
-```
-[INFO] Streaming response:
-
---- Streaming Response ---
-**Machine Learning** is a subset of artificial intelligence that focuses on algorithms and statistical models that enable computers to learn and make decisions from data without being explicitly programmed for every task.
-
-Key concepts include:
-* **Supervised Learning**: Learning from labeled examples
-* **Unsupervised Learning**: Finding patterns in unlabeled data
-* **Reinforcement Learning**: Learning through trial and error
-
---- End of Stream ---
-[INFO] Coroutine finished successfully.
-[INFO] Done!
+**Sample Output:**
+```json
+{
+  "overall_stats": {
+    "total_duration_seconds": 15.234,
+    "total_prompt_tokens": 1250,
+    "total_completion_tokens": 25000,
+    "total_tokens": 26250,
+    "total_number_requests": 11,
+    "total_number_failures": 0,
+    "requests_per_second": 0.722,
+    "start_time": 1758574038.123456,
+    "end_time": 1758574053.357456
+  },
+  "completions": [
+    {
+      "input": {
+        "prompt": "Summarize Harry Potter Series. I have 10 minutes to read it.",
+        "max_tokens": 5000,
+        "temperature": 0.5
+      },
+      "output_text": "Harry Potter is a series of seven fantasy novels written by J.K. Rowling...",
+      "success": true,
+      "error_message": "",
+      "total_duration_seconds": 2.345,
+      "ttft_duration_seconds": 0.123,
+      "number_of_chunks": 45,
+      "start_time": 1758574038.123456,
+      "ttft_time": 1758574038.246456,
+      "end_time": 1758574040.468456,
+      "api_usage": {
+        "prompt_tokens": 120,
+        "completion_tokens": 2500,
+        "total_tokens": 2620
+      },
+      "api_time_info": {
+        "queue_time": 0.001,
+        "prompt_time": 0.050,
+        "completion_time": 2.294,
+        "total_time": 2.345,
+        "created": 1758574038
+      }
+    }
+  ]
+}
 ```
 
 ## Expected Output
 
-### Non-Streaming Mode
-- Complete JSON response from the Cerebras API
-- Usage statistics (tokens used)
-- Connection status and any errors
-
-### Streaming Mode
-- Real-time text output as it's generated
-- Visual indicators for stream start/end
-- Same error handling as non-streaming mode
+The throughput test generates detailed performance statistics including:
+- Overall test duration and requests per second
+- Token usage statistics (prompt, completion, and total tokens)
+- Individual request timing (total duration, time to first token)
+- Success/failure counts and error messages
+- API timing information (queue time, prompt processing time, completion time)
 
 ## Troubleshooting
 
@@ -193,6 +181,7 @@ Key concepts include:
 2. **Connection refused**: Check your internet connection and API endpoint
 3. **Authentication errors**: Verify your API key is correct
 4. **Compilation errors**: Ensure all dependencies are properly installed
+5. **No valid requests found**: Check that your input JSONL file contains valid JSON objects
 
 ### Build Issues
 
