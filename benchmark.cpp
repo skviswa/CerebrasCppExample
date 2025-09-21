@@ -16,8 +16,8 @@
 
 // Command line argument structure
 struct CommandLineConfig {
-    std::string api_key = "";
-    std::string input_file = "";
+    std::string api_key;
+    std::string input_file;
     std::string output_file = "benchmark_results.json";
     std::string api_endpoint = "https://api.cerebras.ai/v1";
     std::string model = "llama-3.3-70b";
@@ -53,7 +53,7 @@ CommandLineConfig parse_arguments(int argc, char* argv[]) {
         po::store(po::parse_command_line(argc, argv, desc), vm);
         po::notify(vm);
 
-        if (vm.count("help")) {
+        if (vm.contains("help") != 0u) {
             std::cout << "Usage: " << argv[0] << " [options]\n";
             std::cout << desc << "\n";
             exit(0);
@@ -71,7 +71,7 @@ CommandLineConfig parse_arguments(int argc, char* argv[]) {
             exit(1);
         }
     } catch (const std::exception& e) {
-        std::cerr << "Error parsing command line arguments: " << e.what() << std::endl;
+        std::cerr << "Error parsing command line arguments: " << e.what() << '\n';
         exit(1);
     }
 
@@ -101,25 +101,25 @@ std::vector<nlohmann::json> load_requests_from_jsonl(const std::string& filename
             requests.push_back(request);
         } catch (const nlohmann::json::parse_error& e) {
             std::cerr << "Warning: Failed to parse JSON on line " << line_number << ": " << e.what()
-                      << std::endl;
+                      << '\n';
         }
     }
 
     file.close();
     std::cout << "[INFO] Loaded " + std::to_string(requests.size()) + " requests from " + filename
-              << std::endl;
+              << '\n';
     return requests;
 }
 
 struct CompletionStats {
-    std::chrono::steady_clock::time_point start_time = std::chrono::steady_clock::time_point{};
-    std::chrono::steady_clock::time_point ttft_time = std::chrono::steady_clock::time_point{};
-    std::chrono::steady_clock::time_point end_time = std::chrono::steady_clock::time_point{};
+    std::chrono::steady_clock::time_point start_time;
+    std::chrono::steady_clock::time_point ttft_time;
+    std::chrono::steady_clock::time_point end_time;
     size_t number_of_chunks = 0;
-    nlohmann::json input = nlohmann::json{};
-    std::string output_text = "";
+    nlohmann::json input;
+    std::string output_text;
     bool success = true;
-    std::string error_message = "";
+    std::string error_message;
 
     // Helper functions to calculate durations
     std::optional<double> get_total_duration() const {
@@ -248,8 +248,8 @@ struct CompletionStats {
 
 // Stats structure for overall performance metrics
 struct OverallStats {
-    std::chrono::steady_clock::time_point start_time = std::chrono::steady_clock::time_point{};
-    std::chrono::steady_clock::time_point end_time = std::chrono::steady_clock::time_point{};
+    std::chrono::steady_clock::time_point start_time;
+    std::chrono::steady_clock::time_point end_time;
     size_t total_prompt_tokens = 0;
     size_t total_completion_tokens = 0;
     size_t total_tokens = 0;
@@ -323,7 +323,7 @@ CompletionStats do_completion(const nlohmann::json& request, const liboai::OpenA
     stats.input = request;
 
     // Buffer to accumulate streaming data chunks
-    std::string data_buffer = "";
+    std::string data_buffer;
 
     liboai::Completions::StreamCallback stream_callback =
         [&stats, &data_buffer](std::string data, intptr_t userdata) -> bool {
@@ -346,11 +346,11 @@ CompletionStats do_completion(const nlohmann::json& request, const liboai::OpenA
             }
 
             // Handle SSE format - check for data: prefix
-            if (line.substr(0, 5) == "data:") {
+            if (line.starts_with("data:")) {
                 std::string json_data = line.substr(5);
                 // Trim whitespace after data: prefix
-                json_data.erase(0, json_data.find_first_not_of(" "));
-                json_data.erase(json_data.find_last_not_of(" ") + 1);
+                json_data.erase(0, json_data.find_first_not_of(' '));
+                json_data.erase(json_data.find_last_not_of(' ') + 1);
 
                 // Handle [DONE] message
                 if (json_data == "[DONE]") {
@@ -368,8 +368,8 @@ CompletionStats do_completion(const nlohmann::json& request, const liboai::OpenA
                 try {
                     chunk = nlohmann::json::parse(json_data);
                 } catch (const nlohmann::json::parse_error& e) {
-                    std::cerr << "[ERROR] JSON parse error: " + std::string(e.what()) << std::endl;
-                    std::cerr << "[ERROR] Failed data: '" + json_data + "'" << std::endl;
+                    std::cerr << "[ERROR] JSON parse error: " + std::string(e.what()) << '\n';
+                    std::cerr << "[ERROR] Failed data: '" + json_data + "'" << '\n';
                     stats.success = false;
                     stats.error_message = e.what();
                     return false;  // Stop streaming on parse error
@@ -522,7 +522,7 @@ Stats do_completions(const std::vector<nlohmann::json>& requests, int concurrent
     // Create a thread pool-like approach using futures
     std::atomic<size_t> next_request_index{0};
 
-    auto worker = [&]() {
+    auto worker = [&]() -> void {
         while (true) {
             size_t index = next_request_index.fetch_add(1);
             if (index >= requests.size()) {
@@ -554,7 +554,7 @@ Stats do_completions(const std::vector<nlohmann::json>& requests, int concurrent
     return std::make_pair(stats, all_completion_stats);
 }
 
-void dump_stats_to_file(const Stats stats, const std::string& filename) {
+void dump_stats_to_file(const Stats& stats, const std::string& filename) {
     nlohmann::json output_json;
 
     // Add overall stats using the to_json method
@@ -573,9 +573,9 @@ void dump_stats_to_file(const Stats stats, const std::string& filename) {
     if (output_file.is_open()) {
         output_file << output_json.dump(4);
         output_file.close();
-        std::cout << "[INFO] Statistics written to " + filename << std::endl;
+        std::cout << "[INFO] Statistics written to " + filename << '\n';
     } else {
-        std::cerr << "[ERROR] Failed to open output file: " + filename << std::endl;
+        std::cerr << "[ERROR] Failed to open output file: " + filename << '\n';
     }
 }
 
@@ -586,14 +586,14 @@ int main(int argc, char* argv[]) {
     // Load requests from JSONL file
     const auto requests = load_requests_from_jsonl(config.input_file);
     if (requests.empty()) {
-        std::cerr << "[ERROR] No valid requests found in input file" << std::endl;
+        std::cerr << "[ERROR] No valid requests found in input file" << '\n';
         return EXIT_FAILURE;
     }
 
     // Initialize liboai with the provided API key and endpoint
     liboai::OpenAI oai(config.api_endpoint);
     if (!oai.auth.SetKey(config.api_key)) {
-        std::cerr << "[ERROR] Failed to set API key." << std::endl;
+        std::cerr << "[ERROR] Failed to set API key." << '\n';
         return EXIT_FAILURE;
     }
 
@@ -602,6 +602,6 @@ int main(int argc, char* argv[]) {
     // Dump stats to output file
     dump_stats_to_file(stats, config.output_file);
 
-    std::cout << "[INFO] Done!" << std::endl;
+    std::cout << "[INFO] Done!" << '\n';
     return EXIT_SUCCESS;
 }
