@@ -1,0 +1,11 @@
+{"prompt": "Summarize Harry Potter Series. I have 10 minutes to read it.", "max_tokens": 5000, "temperature": 0.5}
+{"prompt": "Summarize Design Patterns. I have 10 minutes to read it.", "max_tokens": 5000, "temperature": 0.5}
+{"prompt": "Explain machine learning in simple terms", "max_tokens": 150, "temperature": 0.5}
+{"prompt": "What are the benefits of cloud computing?", "max_tokens": 120, "temperature": 0.8}
+{"prompt": "How does quantum computing work?", "max_tokens": 200, "temperature": 0.6}
+{"prompt": "Describe the history of the internet", "max_tokens": 180, "temperature": 0.7}
+{"prompt": "What is the difference between HTTP and HTTPS?", "max_tokens": 80, "temperature": 0.4}
+{"prompt": "Explain blockchain technology", "max_tokens": 160, "temperature": 0.7}
+{"prompt": "What are the principles of good software design?", "max_tokens": 140, "temperature": 0.6}
+{"prompt": "How do neural networks learn?", "max_tokens": 130, "temperature": 0.8}
+{"prompt": "What is the future of renewable energy?", "max_tokens": 110, "temperature": 0.7}
