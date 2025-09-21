@@ -11,26 +11,21 @@ add_subdirectory(extern/liboai)
 # Find required packages
 find_package(Boost REQUIRED COMPONENTS program_options)
 
-# Add executable
-add_executable(rest_client rest_client.cpp)
-
-# Include directories
-target_include_directories(rest_client PRIVATE
-    ${Boost_INCLUDE_DIRS}
-)
+# Add executables
+add_executable(throughput_test throughput_test.cpp)
 
 # Link libraries
-target_link_libraries(rest_client PRIVATE
+target_link_libraries(throughput_test PRIVATE
     Boost::program_options  # For command line argument parsing
     oai  # liboai library
 )
 
 # Compiler-specific options
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-    target_compile_options(rest_client PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(throughput_test PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
 # Set output directory
-set_target_properties(rest_client PROPERTIES
+set_target_properties(throughput_test PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 )

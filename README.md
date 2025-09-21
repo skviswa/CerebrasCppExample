@@ -1,6 +1,6 @@
 # Cerebras REST Client
 
-A C++ client for making inference calls to the Cerebras API endpoint with support for both streaming and non-streaming modes.
+A C++ client for making inference calls to the Cerebras API endpoint with support for both streaming and non-streaming modes, plus throughput testing capabilities.
 
 ## Features
 
@@ -51,23 +51,14 @@ cd build
 cmake ..
 make
 
-# The binary will be created at: build/bin/rest_client
+# The binaries will be created at: build/bin/rest_client and build/bin/throughput_test
 ```
 
-### Method 2: Direct Compilation
-
-```bash
-g++ -std=c++20 -o rest_client rest_client.cpp \
-    -Iextern/liboai/liboai/include \
-    -I/opt/homebrew/include \
-    -L/opt/homebrew/lib \
-    -lcurl \
-    -lboost_program_options
-```
+**Note**: The direct compilation method is not recommended due to the complexity of the liboai library dependencies. Please use CMake for reliable builds.
 
 ## Usage
 
-### Basic Usage
+### REST Client Basic Usage
 
 ```bash
 ./bin/rest_client --api_key=YOUR_API_KEY --prompt="Hello, world!"
@@ -92,6 +83,40 @@ g++ -std=c++20 -o rest_client rest_client.cpp \
 - `--max_tokens`: (Optional) Maximum tokens to generate, defaults to 100
 - `--stream`: (Optional) Enable streaming mode for real-time response
 - `--help`, `-h`: Show help message
+
+### Throughput Test Usage
+
+```bash
+./bin/throughput_test \
+  --api_key="your-cerebras-api-key" \
+  --input_file="requests.jsonl" \
+  --concurrent_requests=5 \
+  --output_file="results.json"
+```
+
+### Throughput Test Parameters
+
+- `--api_key`: (Required) Your Cerebras API key
+- `--api_endpoint`: (Optional) API endpoint URL, defaults to "https://api.cerebras.ai/v1"
+- `--input_file`: (Required) Path to JSONL file containing completion requests
+- `--concurrent_requests`: (Optional) Number of concurrent threads, defaults to 10
+- `--output_file`: (Optional) Path to output JSON stats file, defaults to "throughput_stats.json"
+- `--help`, `-h`: Show help message
+
+### JSONL File Format
+
+The input file should contain one JSON object per line with the following structure:
+
+```json
+{"prompt": "Your prompt here", "max_tokens": 100, "temperature": 0.7, "model": "llama-3.3-70b"}
+{"prompt": "Another prompt", "max_tokens": 150, "temperature": 0.5, "model": "llama-3.3-70b"}
+```
+
+Each JSON object can contain:
+- `prompt`: (Required) The input prompt string
+- `max_tokens`: (Optional) Maximum tokens to generate
+- `temperature`: (Optional) Sampling temperature for the model
+- `model`: (Optional) Model name to use, defaults to "llama-3.3-70b"
 
 ## Examples
 
