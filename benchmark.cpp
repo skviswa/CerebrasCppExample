@@ -19,7 +19,7 @@
 struct CommandLineConfig {
     std::string api_key = "";
     std::string input_file = "";
-    std::string output_file = "throughput_stats.json";
+    std::string output_file = "benchmark_results.json";
     std::string api_endpoint = "https://api.cerebras.ai/v1";
     std::string model = "llama-3.3-70b";
     int concurrent_requests = 10;
