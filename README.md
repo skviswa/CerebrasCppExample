@@ -6,7 +6,7 @@ A C++ client for making inference calls to the Cerebras API endpoint with suppor
 
 - ✅ **Non-streaming mode**: Complete JSON response at once
 - ✅ **Streaming mode**: Real-time response as it's generated
-- ✅ **No external dependencies**: Uses only Boost and nlohmann/json
+- ✅ **Simplified dependencies**: Uses only Boost and liboai
 - ✅ **Command-line interface**: Easy to use with various parameters
 - ✅ **SSL/TLS support**: Secure HTTPS communication
 
@@ -15,9 +15,7 @@ A C++ client for making inference calls to the Cerebras API endpoint with suppor
 ### Required Libraries
 
 1. **Boost libraries** (version 1.70+)
-2. **nlohmann/json** (JSON library)
-3. **OpenSSL** (for SSL/TLS support)
-4. **liboai** (OpenAI API library - included as submodule)
+2. **liboai** (OpenAI API library - included as submodule)
 
 ### Installation
 
@@ -60,10 +58,11 @@ make
 
 ```bash
 g++ -std=c++20 -o rest_client rest_client.cpp \
-    -lssl -lcrypto \
-    -lnlohmann_json::nlohmann_json \
+    -Iextern/liboai/liboai/include \
     -I/opt/homebrew/include \
-    -L/opt/homebrew/lib
+    -L/opt/homebrew/lib \
+    -lcurl \
+    -lboost_program_options
 ```
 
 ## Usage
@@ -91,7 +90,7 @@ g++ -std=c++20 -o rest_client rest_client.cpp \
 - `--model`: (Optional) Model name, defaults to "llama-3.3-70b"
 - `--prompt`: (Optional) Input prompt, defaults to "Hello, world!"
 - `--max_tokens`: (Optional) Maximum tokens to generate, defaults to 100
-- `--stream`, `--streaming`: (Optional) Enable streaming mode for real-time response
+- `--stream`: (Optional) Enable streaming mode for real-time response
 - `--help`, `-h`: Show help message
 
 ## Examples

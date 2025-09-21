@@ -1,8 +1,8 @@
 # Makefile for Cerebras REST Client
 CXX = clang++
-CXXFLAGS = -std=c++17 -Wall -Wextra -Wpedantic
+CXXFLAGS = -std=c++20 -Wall -Wextra -Wpedantic
 INCLUDES = -I/opt/homebrew/include -I/usr/local/include
-LIBS = -lssl -lcrypto -labsl_log -labsl_flags -labsl_strings -lnlohmann_json::nlohmann_json
+LIBS = -L/opt/homebrew/lib -lssl -lcrypto -lboost_program_options
 
 # Target executable
 TARGET = rest_client
