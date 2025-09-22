@@ -1,0 +1,301 @@
+{
+    "completions": [
+        {
+            "api_time_info": {
+                "completion_time": 0.208838085,
+                "created": 1758496139,
+                "prompt_time": 0.001678634,
+                "queue_time": 8.2861e-05,
+                "total_time": 0.21256518363952637
+            },
+            "api_usage": {
+                "completion_tokens": 418,
+                "prompt_tokens": 17,
+                "total_tokens": 435
+            },
+            "end_time": 2561453.513326583,
+            "error_message": "",
+            "input": {
+                "max_tokens": 5000,
+                "prompt": "Summarize Harry Potter Series. I have 10 minutes to read it.",
+                "temperature": 0.5
+            },
+            "number_of_chunks": 420,
+            "output_text": " I'm in a hurry.\nHere's a quick summary of the Harry Potter series:\n\n**The Main Story**\nHarry Potter, an orphan, discovers he's a wizard. He attends Hogwarts School of Witchcraft and Wizardry, makes friends Ron and Hermione, and uncovers a plot by the dark wizard Lord Voldemort to return to power.\n\n**The 7 Books**\n\n1. **Philosopher's Stone**: Harry learns magic, attends Hogwarts, and thwarts Voldemort's plan to steal the powerful Philosopher's Stone.\n2. **Chamber of Secrets**: Harry and friends investigate a mysterious Chamber of Secrets, which has been reopened, unleashing a monster that's petrifying Muggle-born students.\n3. **Prisoner of Azkaban**: Sirius Black, a wizard believed to have betrayed Harry's parents to Voldemort, escapes from prison. Harry learns the truth about Black and his connection to his parents.\n4. **Goblet of Fire**: Harry is unexpectedly selected as a participant in the Triwizard Tournament, a magical competition between schools. Voldemort returns to power, and a dark event occurs.\n5. **Order of the Phoenix**: Harry must convince the wizarding world that Voldemort has returned. He forms a secret group, Dumbledore's Army, to learn defensive magic against the Dark Arts.\n6. **Half-Blood Prince**: Harry returns to Hogwarts, where he discovers an old potions textbook with notes from a mysterious former student. Voldemort's Death Eaters are becoming more powerful.\n7. **Deathly Hallows**: Harry, Ron, and Hermione embark on a perilous journey to find and destroy Voldemort's Horcruxes, objects that contain pieces of his soul and are the key to his immortality.\n\n**The Final Battle**\nThe trio faces numerous challenges, and the series culminates in a final battle at Hogwarts. Harry and Voldemort engage in a one-on-one duel, resulting in the ultimate defeat of the Dark Lord.\n\nThat's a quick summary of the Harry Potter series! You should be able to finish reading this in under 10 minutes. Enjoy!<|eot_id|>",
+            "start_time": 2561453.026750583,
+            "success": true,
+            "total_duration_seconds": 0.486576
+        },
+        {
+            "api_time_info": {
+                "completion_time": 1.521151117,
+                "created": 1758496139,
+                "prompt_time": 0.001851506,
+                "queue_time": 6.7621e-05,
+                "total_time": 1.525080919265747
+            },
+            "api_usage": {
+                "completion_tokens": 5000,
+                "prompt_tokens": 16,
+                "total_tokens": 5016
+            },
+            "end_time": 2561454.879527916,
+            "error_message": "",
+            "input": {
+                "max_tokens": 5000,
+                "prompt": "Summarize Design Patterns. I have 10 minutes to read it.",
+                "temperature": 0.5
+            },
+            "number_of_chunks": 5002,
+            "output_text": " \n\n**Introduction to Design Patterns**\n=====================================\n\nDesign patterns are reusable solutions to common problems that arise during software development. They provide a proven development paradigm, making it easier to create maintainable, flexible, and scalable software systems.\n\n**Types of Design Patterns**\n---------------------------\n\nThere are three main categories of design patterns:\n\n1. **Creational Patterns**: These patterns deal with object creation and initialization. Examples include Singleton, Factory, and Builder patterns.\n2. **Structural Patterns**: These patterns focus on the composition of objects and classes. Examples include Adapter, Bridge, and Composite patterns.\n3. **Behavioral Patterns**: These patterns define the interactions between objects and classes. Examples include Observer, Strategy, and Template Method patterns.\n\n**Benefits of Design Patterns**\n-----------------------------\n\n1. **Improved Code Maintainability**: Design patterns promote code reusability, reducing the need for redundant code.\n2. **Increased Flexibility**: Design patterns make it easier to modify and extend existing code.\n3. **Enhanced Scalability**: Design patterns enable developers to create systems that can handle increased traffic and data.\n\n**Common Design Patterns**\n-------------------------\n\nSome popular design patterns include:\n\n* **Singleton Pattern**: Ensures a class has only one instance.\n* **Factory Pattern**: Provides a way to create objects without specifying the exact class.\n* **Observer Pattern**: Allows objects to notify other objects of changes.\n* **Strategy Pattern**: Enables objects to change their behavior at runtime.\n\n**Best Practices**\n-----------------\n\n1. **Keep it Simple**: Avoid over-engineering your code with unnecessary patterns.\n2. **Use Patterns Judiciously**: Apply patterns only when they solve a specific problem.\n3. **Document Your Patterns**: Clearly document the patterns used in your code to ensure maintainability.\n\nBy applying design patterns effectively, developers can create robust, maintainable, and scalable software systems. Remember to use patterns judiciously and keep your code simple and well-documented. \n\nYou've got 10 minutes to read this, and you've already spent 1 minute. You have 9 minutes left! \n\n### Time Check: 9 minutes remaining \n\nYou've made it this far, and you've got a good understanding of what design patterns are. Now, let's dive deeper into some examples.\n\n### Creational Patterns\n\n*   **Singleton Pattern**: This pattern restricts a class from instantiating multiple objects. It creates a single instance of a class and provides a global point of access to that instance.\n*   **Factory Pattern**: This pattern provides a way to create objects without specifying the exact class of object that will be created.\n*   **Builder Pattern**: This pattern separates the construction of complex objects from their representation, allowing the same construction process to create different representations.\n\n### Structural Patterns\n\n*   **Adapter Pattern**: This pattern allows two incompatible objects to work together by converting the interface of one object into an interface expected by the other object.\n*   **Bridge Pattern**: This pattern separates an object's abstraction from its implementation, allowing them to vary independently.\n*   **Composite Pattern**: This pattern allows clients to treat individual objects and compositions of objects uniformly.\n\n### Behavioral Patterns\n\n*   **Observer Pattern**: This pattern defines a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified and updated automatically.\n*   **Strategy Pattern**: This pattern defines a family of algorithms, encapsulates each one as an object, and makes them interchangeable.\n*   **Template Method Pattern**: This pattern provides a way to define the skeleton of an algorithm in a method, deferring some steps to subclasses.\n\n### Time Check: 5 minutes remaining \n\nYou're halfway through, and you've got a good grasp of the different types of design patterns. Now, let's talk about how to apply them effectively.\n\n### Applying Design Patterns\n\n1.  **Identify the Problem**: Before applying a design pattern, identify the problem you're trying to solve.\n2.  **Choose the Right Pattern**: Select the design pattern that best solves the problem.\n3.  **Apply the Pattern**: Apply the design pattern to your code, following the principles and guidelines of the pattern.\n4.  **Test and Refine**: Test your code and refine it as needed to ensure it's working correctly and efficiently.\n\n### Time Check: 2 minutes remaining \n\nYou're almost done, and you've got a good understanding of design patterns and how to apply them. Now, let's summarize the key points.\n\n### Summary\n\n*   Design patterns are reusable solutions to common problems in software development.\n*   There are three main categories of design patterns: creational, structural, and behavioral.\n*   Design patterns promote code reusability, flexibility, and scalability.\n*   Apply design patterns judiciously, keeping your code simple and well-documented.\n\n### Time Check: 1 minute remaining \n\nYou've made it to the end, and you've got a solid understanding of design patterns. Remember to apply them effectively in your own code, and happy coding! \n\n### Time Check: 0 minutes remaining \n\nYou've finished reading about design patterns. We hope you found this helpful and informative. Happy coding! \n\nThis text should have taken you about 10 minutes to read. If you'd like to learn more about design patterns, we recommend checking out some additional resources, such as books or online tutorials. Happy learning! \n\n### Additional Resources\n\n*   **Books**: \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\n*   **Online Tutorials**: Codecademy, FreeCodeCamp, and Udemy courses on design patterns\n\nWe hope you found this helpful. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Frequently Asked Questions\n\n*   **Q: What are design patterns?**\n    *   A: Design patterns are reusable solutions to common problems in software development.\n*   **Q: What are the benefits of using design patterns?**\n    *   A: Design patterns promote code reusability, flexibility, and scalability.\n*   **Q: How do I apply design patterns effectively?**\n    *   A: Identify the problem, choose the right pattern, apply the pattern, and test and refine your code. \n\nWe hope this helps. Let us know if you have any other questions. \n\n### Conclusion\n\nDesign patterns are a powerful tool for software developers, providing reusable solutions to common problems. By understanding and applying design patterns effectively, developers can create robust, maintainable, and scalable software systems. Remember to keep your code simple, use patterns judiciously, and document your patterns clearly. Happy coding! \n\nThis is the end of the text. We hope you found it helpful and informative. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Final Time Check: 0 minutes remaining \n\nYou've finished reading about design patterns. We hope you found this helpful and informative. Happy coding! \n\nNote: The time checks are just a fun way to keep track of your reading time. Feel free to read at your own pace and take breaks as needed. \n\nThis text should have taken you about 10 minutes to read. If you'd like to learn more about design patterns, we recommend checking out some additional resources, such as books or online tutorials. Happy learning! \n\n### Additional Resources\n\n*   **Books**: \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\n*   **Online Tutorials**: Codecademy, FreeCodeCamp, and Udemy courses on design patterns\n\nWe hope you found this helpful. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Frequently Asked Questions\n\n*   **Q: What are design patterns?**\n    *   A: Design patterns are reusable solutions to common problems in software development.\n*   **Q: What are the benefits of using design patterns?**\n    *   A: Design patterns promote code reusability, flexibility, and scalability.\n*   **Q: How do I apply design patterns effectively?**\n    *   A: Identify the problem, choose the right pattern, apply the pattern, and test and refine your code. \n\nWe hope this helps. Let us know if you have any other questions. \n\n### Conclusion\n\nDesign patterns are a powerful tool for software developers, providing reusable solutions to common problems. By understanding and applying design patterns effectively, developers can create robust, maintainable, and scalable software systems. Remember to keep your code simple, use patterns judiciously, and document your patterns clearly. Happy coding! \n\nThis is the end of the text. We hope you found it helpful and informative. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Final Time Check: 0 minutes remaining \n\nYou've finished reading about design patterns. We hope you found this helpful and informative. Happy coding! \n\nNote: The time checks are just a fun way to keep track of your reading time. Feel free to read at your own pace and take breaks as needed. \n\nThis text should have taken you about 10 minutes to read. If you'd like to learn more about design patterns, we recommend checking out some additional resources, such as books or online tutorials. Happy learning! \n\n### Additional Resources\n\n*   **Books**: \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\n*   **Online Tutorials**: Codecademy, FreeCodeCamp, and Udemy courses on design patterns\n\nWe hope you found this helpful. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Frequently Asked Questions\n\n*   **Q: What are design patterns?**\n    *   A: Design patterns are reusable solutions to common problems in software development.\n*   **Q: What are the benefits of using design patterns?**\n    *   A: Design patterns promote code reusability, flexibility, and scalability.\n*   **Q: How do I apply design patterns effectively?**\n    *   A: Identify the problem, choose the right pattern, apply the pattern, and test and refine your code. \n\nWe hope this helps. Let us know if you have any other questions. \n\n### Conclusion\n\nDesign patterns are a powerful tool for software developers, providing reusable solutions to common problems. By understanding and applying design patterns effectively, developers can create robust, maintainable, and scalable software systems. Remember to keep your code simple, use patterns judiciously, and document your patterns clearly. Happy coding! \n\nThis is the end of the text. We hope you found it helpful and informative. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Final Time Check: 0 minutes remaining \n\nYou've finished reading about design patterns. We hope you found this helpful and informative. Happy coding! \n\nNote: The time checks are just a fun way to keep track of your reading time. Feel free to read at your own pace and take breaks as needed. \n\nThis text should have taken you about 10 minutes to read. If you'd like to learn more about design patterns, we recommend checking out some additional resources, such as books or online tutorials. Happy learning! \n\n### Additional Resources\n\n*   **Books**: \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\n*   **Online Tutorials**: Codecademy, FreeCodeCamp, and Udemy courses on design patterns\n\nWe hope you found this helpful. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Frequently Asked Questions\n\n*   **Q: What are design patterns?**\n    *   A: Design patterns are reusable solutions to common problems in software development.\n*   **Q: What are the benefits of using design patterns?**\n    *   A: Design patterns promote code reusability, flexibility, and scalability.\n*   **Q: How do I apply design patterns effectively?**\n    *   A: Identify the problem, choose the right pattern, apply the pattern, and test and refine your code. \n\nWe hope this helps. Let us know if you have any other questions. \n\n### Conclusion\n\nDesign patterns are a powerful tool for software developers, providing reusable solutions to common problems. By understanding and applying design patterns effectively, developers can create robust, maintainable, and scalable software systems. Remember to keep your code simple, use patterns judiciously, and document your patterns clearly. Happy coding! \n\nThis is the end of the text. We hope you found it helpful and informative. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Final Time Check: 0 minutes remaining \n\nYou've finished reading about design patterns. We hope you found this helpful and informative. Happy coding! \n\nNote: The time checks are just a fun way to keep track of your reading time. Feel free to read at your own pace and take breaks as needed. \n\nThis text should have taken you about 10 minutes to read. If you'd like to learn more about design patterns, we recommend checking out some additional resources, such as books or online tutorials. Happy learning! \n\n### Additional Resources\n\n*   **Books**: \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\n*   **Online Tutorials**: Codecademy, FreeCodeCamp, and Udemy courses on design patterns\n\nWe hope you found this helpful. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Frequently Asked Questions\n\n*   **Q: What are design patterns?**\n    *   A: Design patterns are reusable solutions to common problems in software development.\n*   **Q: What are the benefits of using design patterns?**\n    *   A: Design patterns promote code reusability, flexibility, and scalability.\n*   **Q: How do I apply design patterns effectively?**\n    *   A: Identify the problem, choose the right pattern, apply the pattern, and test and refine your code. \n\nWe hope this helps. Let us know if you have any other questions. \n\n### Conclusion\n\nDesign patterns are a powerful tool for software developers, providing reusable solutions to common problems. By understanding and applying design patterns effectively, developers can create robust, maintainable, and scalable software systems. Remember to keep your code simple, use patterns judiciously, and document your patterns clearly. Happy coding! \n\nThis is the end of the text. We hope you found it helpful and informative. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Final Time Check: 0 minutes remaining \n\nYou've finished reading about design patterns. We hope you found this helpful and informative. Happy coding! \n\nNote: The time checks are just a fun way to keep track of your reading time. Feel free to read at your own pace and take breaks as needed. \n\nThis text should have taken you about 10 minutes to read. If you'd like to learn more about design patterns, we recommend checking out some additional resources, such as books or online tutorials. Happy learning! \n\n### Additional Resources\n\n*   **Books**: \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\n*   **Online Tutorials**: Codecademy, FreeCodeCamp, and Udemy courses on design patterns\n\nWe hope you found this helpful. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Frequently Asked Questions\n\n*   **Q: What are design patterns?**\n    *   A: Design patterns are reusable solutions to common problems in software development.\n*   **Q: What are the benefits of using design patterns?**\n    *   A: Design patterns promote code reusability, flexibility, and scalability.\n*   **Q: How do I apply design patterns effectively?**\n    *   A: Identify the problem, choose the right pattern, apply the pattern, and test and refine your code. \n\nWe hope this helps. Let us know if you have any other questions. \n\n### Conclusion\n\nDesign patterns are a powerful tool for software developers, providing reusable solutions to common problems. By understanding and applying design patterns effectively, developers can create robust, maintainable, and scalable software systems. Remember to keep your code simple, use patterns judiciously, and document your patterns clearly. Happy coding! \n\nThis is the end of the text. We hope you found it helpful and informative. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Final Time Check: 0 minutes remaining \n\nYou've finished reading about design patterns. We hope you found this helpful and informative. Happy coding! \n\nNote: The time checks are just a fun way to keep track of your reading time. Feel free to read at your own pace and take breaks as needed. \n\nThis text should have taken you about 10 minutes to read. If you'd like to learn more about design patterns, we recommend checking out some additional resources, such as books or online tutorials. Happy learning! \n\n### Additional Resources\n\n*   **Books**: \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\n*   **Online Tutorials**: Codecademy, FreeCodeCamp, and Udemy courses on design patterns\n\nWe hope you found this helpful. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Frequently Asked Questions\n\n*   **Q: What are design patterns?**\n    *   A: Design patterns are reusable solutions to common problems in software development.\n*   **Q: What are the benefits of using design patterns?**\n    *   A: Design patterns promote code reusability, flexibility, and scalability.\n*   **Q: How do I apply design patterns effectively?**\n    *   A: Identify the problem, choose the right pattern, apply the pattern, and test and refine your code. \n\nWe hope this helps. Let us know if you have any other questions. \n\n### Conclusion\n\nDesign patterns are a powerful tool for software developers, providing reusable solutions to common problems. By understanding and applying design patterns effectively, developers can create robust, maintainable, and scalable software systems. Remember to keep your code simple, use patterns judiciously, and document your patterns clearly. Happy coding! \n\nThis is the end of the text. We hope you found it helpful and informative. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Final Time Check: 0 minutes remaining \n\nYou've finished reading about design patterns. We hope you found this helpful and informative. Happy coding! \n\nNote: The time checks are just a fun way to keep track of your reading time. Feel free to read at your own pace and take breaks as needed. \n\nThis text should have taken you about 10 minutes to read. If you'd like to learn more about design patterns, we recommend checking out some additional resources, such as books or online tutorials. Happy learning! \n\n### Additional Resources\n\n*   **Books**: \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\n*   **Online Tutorials**: Codecademy, FreeCodeCamp, and Udemy courses on design patterns\n\nWe hope you found this helpful. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Frequently Asked Questions\n\n*   **Q: What are design patterns?**\n    *   A: Design patterns are reusable solutions to common problems in software development.\n*   **Q: What are the benefits of using design patterns?**\n    *   A: Design patterns promote code reusability, flexibility, and scalability.\n*   **Q: How do I apply design patterns effectively?**\n    *   A: Identify the problem, choose the right pattern, apply the pattern, and test and refine your code. \n\nWe hope this helps. Let us know if you have any other questions. \n\n### Conclusion\n\nDesign patterns are a powerful tool for software developers, providing reusable solutions to common problems. By understanding and applying design patterns effectively, developers can create robust, maintainable, and scalable software systems. Remember to keep your code simple, use patterns judiciously, and document your patterns clearly. Happy coding! \n\nThis is the end of the text. We hope you found it helpful and informative. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Final Time Check: 0 minutes remaining \n\nYou've finished reading about design patterns. We hope you found this helpful and informative. Happy coding! \n\nNote: The time checks are just a fun way to keep track of your reading time. Feel free to read at your own pace and take breaks as needed. \n\nThis text should have taken you about 10 minutes to read. If you'd like to learn more about design patterns, we recommend checking out some additional resources, such as books or online tutorials. Happy learning! \n\n### Additional Resources\n\n*   **Books**: \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\n*   **Online Tutorials**: Codecademy, FreeCodeCamp, and Udemy courses on design patterns\n\nWe hope you found this helpful. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Frequently Asked Questions\n\n*   **Q: What are design patterns?**\n    *   A: Design patterns are reusable solutions to common problems in software development.\n*   **Q: What are the benefits of using design patterns?**\n    *   A: Design patterns promote code reusability, flexibility, and scalability.\n*   **Q: How do I apply design patterns effectively?**\n    *   A: Identify the problem, choose the right pattern, apply the pattern, and test and refine your code. \n\nWe hope this helps. Let us know if you have any other questions. \n\n### Conclusion\n\nDesign patterns are a powerful tool for software developers, providing reusable solutions to common problems. By understanding and applying design patterns effectively, developers can create robust, maintainable, and scalable software systems. Remember to keep your code simple, use patterns judiciously, and document your patterns clearly. Happy coding! \n\nThis is the end of the text. We hope you found it helpful and informative. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Final Time Check: 0 minutes remaining \n\nYou've finished reading about design patterns. We hope you found this helpful and informative. Happy coding! \n\nNote: The time checks are just a fun way to keep track of your reading time. Feel free to read at your own pace and take breaks as needed. \n\nThis text should have taken you about 10 minutes to read. If you'd like to learn more about design patterns, we recommend checking out some additional resources, such as books or online tutorials. Happy learning! \n\n### Additional Resources\n\n*   **Books**: \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides\n*   **Online Tutorials**: Codecademy, FreeCodeCamp, and Udemy courses on design patterns\n\nWe hope you found this helpful. Let us know if you have any questions or need further clarification on any of the topics covered. \n\n### Frequently Asked Questions\n\n*   **Q: What are design patterns?**\n    *   A: Design patterns are reusable solutions to common problems in software",
+            "start_time": 2561453.0267595,
+            "success": true,
+            "total_duration_seconds": 1.852768416
+        },
+        {
+            "api_time_info": {
+                "completion_time": 0.083837972,
+                "created": 1758496139,
+                "prompt_time": 0.001542117,
+                "queue_time": 0.023749592,
+                "total_time": 0.11110067367553711
+            },
+            "api_usage": {
+                "completion_tokens": 150,
+                "prompt_tokens": 8,
+                "total_tokens": 158
+            },
+            "end_time": 2561453.643096916,
+            "error_message": "",
+            "input": {
+                "max_tokens": 150,
+                "prompt": "Explain machine learning in simple terms",
+                "temperature": 0.5
+            },
+            "number_of_chunks": 152,
+            "output_text": "\nMachine learning is a type of artificial intelligence (AI) that enables computers to learn and improve their performance on a task without being explicitly programmed for that task. In other words, machine learning allows computers to automatically learn from data and make decisions or predictions based on that data.\nThink of it like this: Imagine you're trying to teach a child to recognize different types of animals. You show them pictures of dogs, cats, and birds, and tell them which one is which. Over time, the child starts to recognize the characteristics of each animal, like the shape of their ears or the color of their feathers. They can then use this knowledge to identify new animals they've never seen before.\nMachine learning works in a similar way. You feed a",
+            "start_time": 2561453.026772208,
+            "success": true,
+            "total_duration_seconds": 0.616324708
+        },
+        {
+            "api_time_info": {
+                "completion_time": 0.075953956,
+                "created": 1758496141,
+                "prompt_time": 0.001302264,
+                "queue_time": 0.000225599,
+                "total_time": 0.07981753349304199
+            },
+            "api_usage": {
+                "completion_tokens": 120,
+                "prompt_tokens": 9,
+                "total_tokens": 129
+            },
+            "end_time": 2561453.455063833,
+            "error_message": "",
+            "input": {
+                "max_tokens": 120,
+                "prompt": "What are the benefits of cloud computing?",
+                "temperature": 0.8
+            },
+            "number_of_chunks": 122,
+            "output_text": " \nCloud computing is a model for delivering computing services over the internet, and it has many benefits. Some of the main benefits of cloud computing include:\nScalability: Cloud computing resources can be quickly scaled up or down to meet changing business needs.\nCost-effectiveness: Cloud computing eliminates the need for upfront capital expenditures on hardware and software, and instead offers a pay-as-you-go pricing model.\nIncreased agility: Cloud computing enables businesses to quickly deploy new applications and services, and to respond rapidly to changing market conditions.\nImproved reliability: Cloud computing providers typically have multiple data centers and redundant systems, which helps",
+            "start_time": 2561453.026799833,
+            "success": true,
+            "total_duration_seconds": 0.428264
+        },
+        {
+            "api_time_info": {
+                "completion_time": 0.107767392,
+                "created": 1758496139,
+                "prompt_time": 0.014036858,
+                "queue_time": 0.005747158,
+                "total_time": 0.137176513671875
+            },
+            "api_usage": {
+                "completion_tokens": 200,
+                "prompt_tokens": 7,
+                "total_tokens": 207
+            },
+            "end_time": 2561453.41715225,
+            "error_message": "",
+            "input": {
+                "max_tokens": 200,
+                "prompt": "How does quantum computing work?",
+                "temperature": 0.6
+            },
+            "number_of_chunks": 202,
+            "output_text": " (Beginner’s guide)\nQuantum computing is a new and rapidly evolving field that uses the principles of quantum mechanics to perform calculations and operations on data. In this beginner’s guide, we will explore the basics of quantum computing, including how it works, its key components, and its potential applications.\nClassical computing vs. quantum computing\nTo understand how quantum computing works, it’s helpful to compare it to classical computing. Classical computers use bits to store and process information, and these bits can only be in one of two states: 0 or 1. This means that classical computers can only process one bit at a time, which can limit their speed and efficiency for certain types of calculations.\nQuantum computers, on the other hand, use quantum bits or qubits, which can exist in multiple states simultaneously. This means that a qubit can represent not just 0 or 1, but also any combination of 0 and 1, such as 0 and 1 at the",
+            "start_time": 2561453.026822125,
+            "success": true,
+            "total_duration_seconds": 0.39033012499999997
+        },
+        {
+            "api_time_info": {
+                "completion_time": 0.080577636,
+                "created": 1758496139,
+                "prompt_time": 0.001759803,
+                "queue_time": 8.7351e-05,
+                "total_time": 0.0899360179901123
+            },
+            "api_usage": {
+                "completion_tokens": 180,
+                "prompt_tokens": 7,
+                "total_tokens": 187
+            },
+            "end_time": 2561453.703003291,
+            "error_message": "",
+            "input": {
+                "max_tokens": 180,
+                "prompt": "Describe the history of the internet",
+                "temperature": 0.7
+            },
+            "number_of_chunks": 182,
+            "output_text": "\nThe history of the internet can be traced back to the 1960s, when the United States Department of Defense's Advanced Research Projects Agency (ARPA) funded a project to create a network of computers that could communicate with each other. This project, called ARPANET, was the first operational packet switching network, and it was developed in the late 1960s and early 1970s by a team of researchers led by Vint Cerf and Bob Kahn.\nIn the 1980s, the Internet Protocol (IP) was developed, which allowed different computer networks to communicate with each other and formed the basis of the modern internet. The Internet Protocol (IP) is a set of rules that govern how data is routed and addressed on the internet. The IP address is a unique identifier assigned to each device on the internet, and it is used to route data packets between devices",
+            "start_time": 2561453.417154208,
+            "success": true,
+            "total_duration_seconds": 0.285849083
+        },
+        {
+            "api_time_info": {
+                "completion_time": 0.047998555,
+                "created": 1758496139,
+                "prompt_time": 0.001378855,
+                "queue_time": 7.2911e-05,
+                "total_time": 0.05734825134277344
+            },
+            "api_usage": {
+                "completion_tokens": 80,
+                "prompt_tokens": 10,
+                "total_tokens": 90
+            },
+            "end_time": 2561453.756765083,
+            "error_message": "",
+            "input": {
+                "max_tokens": 80,
+                "prompt": "What is the difference between HTTP and HTTPS?",
+                "temperature": 0.4
+            },
+            "number_of_chunks": 82,
+            "output_text": " What is the difference between HTTP and HTTPS?\nHTTP stands for Hypertext Transfer Protocol, and HTTPS stands for Hypertext Transfer Protocol Secure. The main difference between HTTP and HTTPS is that HTTPS provides an additional layer of security by encrypting the data in transit between the client (usually a web browser) and the server.\nHere are the key differences between HTTP and HTTPS:\n\n1. **Encryption**: HTTPS encrypt",
+            "start_time": 2561453.45506525,
+            "success": true,
+            "total_duration_seconds": 0.301699833
+        },
+        {
+            "api_time_info": {
+                "completion_time": 0.082837535,
+                "created": 1758496141,
+                "prompt_time": 0.001340899,
+                "queue_time": 0.000426448,
+                "total_time": 0.08630752563476563
+            },
+            "api_usage": {
+                "completion_tokens": 160,
+                "prompt_tokens": 5,
+                "total_tokens": 165
+            },
+            "end_time": 2561453.830085916,
+            "error_message": "",
+            "input": {
+                "max_tokens": 160,
+                "prompt": "Explain blockchain technology",
+                "temperature": 0.7
+            },
+            "number_of_chunks": 162,
+            "output_text": " and its potential applications beyond cryptocurrency.\nBlockchain technology is a decentralized, digital ledger that records transactions across a network of computers. It allows for secure, transparent, and tamper-proof data storage and transfer. The potential applications of blockchain technology extend far beyond cryptocurrency, and can be used in various industries such as:\n1. Supply Chain Management: Blockchain can be used to track the origin, quality, and movement of goods, enabling real-time monitoring and reducing counterfeiting.\n2. Healthcare: Blockchain can be used to securely store and manage medical records, enable secure sharing of medical research, and track the supply chain of pharmaceuticals.\n3. Voting Systems: Blockchain can be used to create secure, transparent, and tamper-proof voting systems, ensuring the integrity of elections.\n4. Smart Contracts: Blockchain can",
+            "start_time": 2561453.51332775,
+            "success": true,
+            "total_duration_seconds": 0.316758166
+        },
+        {
+            "api_time_info": {
+                "completion_time": 0.115461091,
+                "created": 1758496141,
+                "prompt_time": 0.001220818,
+                "queue_time": 9.366e-05,
+                "total_time": 0.12251019477844238
+            },
+            "api_usage": {
+                "completion_tokens": 140,
+                "prompt_tokens": 10,
+                "total_tokens": 150
+            },
+            "end_time": 2561453.946738333,
+            "error_message": "",
+            "input": {
+                "max_tokens": 140,
+                "prompt": "What are the principles of good software design?",
+                "temperature": 0.6
+            },
+            "number_of_chunks": 142,
+            "output_text": " originally appeared on Quora: The best answer to any question.\nAnswer by John Ousterhout, Professor of Computer Science at Stanford University and creator of the Tcl scripting language:\nThere are many principles of good software design, but here are some of the most important ones:\n1. **Separation of Concerns**: Break down a system into smaller, independent components that each handle a single concern or feature. This makes the system easier to understand, modify, and maintain.\n2. **Modularity**: Divide a system into modules that are loosely coupled and highly cohesive. Each module should have a clear and well-defined interface, and should be easy to modify or replace without affecting other parts of the system",
+            "start_time": 2561453.643106208,
+            "success": true,
+            "total_duration_seconds": 0.303632125
+        },
+        {
+            "api_time_info": {
+                "completion_time": 0.115723771,
+                "created": 1758496139,
+                "prompt_time": 0.000948313,
+                "queue_time": 0.000115431,
+                "total_time": 0.11809897422790527
+            },
+            "api_usage": {
+                "completion_tokens": 130,
+                "prompt_tokens": 7,
+                "total_tokens": 137
+            },
+            "end_time": 2561454.001497833,
+            "error_message": "",
+            "input": {
+                "max_tokens": 130,
+                "prompt": "How do neural networks learn?",
+                "temperature": 0.8
+            },
+            "number_of_chunks": 132,
+            "output_text": " ¶\nOne of the most counterintuitive aspects of neural networks is how they learn. In this article, I will explain how a neural network learns using a simple example.\nTo understand how a neural network learns, we first need to understand what a neural network is. A neural network is a series of algorithms that seek to recognize underlying relationships in a set of data through a process that mimics the way the human brain operates. In this sense, neural networks refer to systems of neurons, either organic or artificial in nature. In the context of machine learning, neural networks are also referred to as “artificial” neural networks (ANNs), which",
+            "start_time": 2561453.703005083,
+            "success": true,
+            "total_duration_seconds": 0.29849275
+        },
+        {
+            "api_time_info": {
+                "completion_time": 0.070904923,
+                "created": 1758496139,
+                "prompt_time": 0.001279386,
+                "queue_time": 0.000163661,
+                "total_time": 0.07799887657165527
+            },
+            "api_usage": {
+                "completion_tokens": 110,
+                "prompt_tokens": 9,
+                "total_tokens": 119
+            },
+            "end_time": 2561454.019157166,
+            "error_message": "",
+            "input": {
+                "max_tokens": 110,
+                "prompt": "What is the future of renewable energy?",
+                "temperature": 0.7
+            },
+            "number_of_chunks": 112,
+            "output_text": " The answer is not just about the technology, but also about the policies, regulations, and social attitudes that shape our energy landscape.\nIn this episode, we'll explore the future of renewable energy with Dr. Karin Jacoby, a renewable energy expert with over a decade of experience in the field. We'll discuss the current state of renewable energy, the challenges that lie ahead, and the opportunities for growth and innovation.\nDr. Jacoby will share her insights on the latest developments in solar and wind energy, as well as emerging technologies like hydrogen fuel",
+            "start_time": 2561453.7567665,
+            "success": true,
+            "total_duration_seconds": 0.262390666
+        }
+    ],
+    "overall_stats": {
+        "end_time": 2561454.879657041,
+        "requests_per_second": 5.9365518884765756,
+        "start_time": 2561453.026729583,
+        "total_completion_tokens": 6688,
+        "total_duration_seconds": 1.852927458,
+        "total_number_failures": 0,
+        "total_number_requests": 11,
+        "total_prompt_tokens": 105,
+        "total_tokens": 6793
+    }
+}

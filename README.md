@@ -173,6 +173,13 @@ The benchmark generates detailed performance statistics including:
 - Success/failure counts and error messages
 - API timing information (queue time, prompt processing time, completion time)
 
+## Datasets
+
+Apart from the sample dataset, we have used the 3 benchmark datasets posted by [Raffel Prama on HF](https://huggingface.co/raffel36) `benchmark_1k.jsonl`, `benchmark_8k.jsonl` and `benchmark_16k.jsonl` respectively, to get a sense of what a real world dataset curated performance will look like.
+
+The dataset is not structured in the way this benchmark scripts takes input, and the `convert_benchmark.py` and `convert_all_benchmark.py` scripts are utilities that convert this dataset in the expected format of the benchmark binary.
+For more on this conversion process, checkout `BENCHMARK_CONVERSION.md`
+
 ## Troubleshooting
 
 ### Common Issues
